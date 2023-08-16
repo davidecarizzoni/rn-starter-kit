@@ -1,5 +1,5 @@
-import { OnBoardingNavigator } from '../../screens/onBoarding';
+import { RootNavigator } from '../../screens/RootNavigator';
 
 export const AppNavigator = () => {
-  return <OnBoardingNavigator />;
+  return <RootNavigator />;
 };

@@ -1,20 +1,19 @@
 import { Platform } from 'react-native';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { LoginScreen } from './login/LoginScreen';
 import { useTheme } from '../../hooks/useTheme';
+import { HomeScreen } from './screens/HomeScreen';
 
-type OnBoardingStackParamList = {
-  Login: undefined;
+type HomeStackParamList = {
+  Home: undefined;
 };
 
-export const OnBoardingNavigator = () => {
-  const Stack = createNativeStackNavigator<OnBoardingStackParamList>();
+export const HomeNavigator = () => {
+  const Stack = createNativeStackNavigator<HomeStackParamList>();
   const { colors } = useTheme();
 
   return (
     <Stack.Navigator
-      initialRouteName={'Login'}
       screenOptions={{
         headerLargeTitle: false,
         headerTransparent: Platform.select({ ios: true }),
@@ -22,9 +21,9 @@ export const OnBoardingNavigator = () => {
         headerStyle: {
           backgroundColor: colors.gray['300'],
         },
-        headerTitle: 'login',
+        headerTitle: 'Home',
       }}>
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );
 };
