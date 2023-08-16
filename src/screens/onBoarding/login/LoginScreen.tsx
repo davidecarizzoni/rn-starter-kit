@@ -1,10 +1,13 @@
 import { Text } from 'react-native';
 import { ScreenContainer } from '../../../components/ScreenContainer';
+import { Row } from '../../../components/Row';
 
 export const LoginScreen = () => {
   return (
     <ScreenContainer>
-      <Text>LoginScreen</Text>
+      <Row mt={10} justifyContent={'center'}>
+        <Text>LoginScreen</Text>
+      </Row>
     </ScreenContainer>
   );
 };

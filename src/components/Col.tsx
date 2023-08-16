@@ -4,7 +4,7 @@ import { FlexProps, StyleProps } from '../types/style';
 import { useStyleProps } from '../hooks/useStyleProps';
 import { useFlexProps } from '../hooks/useFlexProps';
 
-export const Row = ({
+export const Col = ({
   children,
   ...rest
 }: PropsWithChildren<StyleProps & FlexProps>) => {
@@ -16,7 +16,7 @@ export const Row = ({
       style={{
         ...styleProps,
         ...flexProps,
-        flexDirection: 'row',
+        flexDirection: 'column',
       }}>
       {children}
     </View>
