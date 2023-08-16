@@ -1,7 +1,6 @@
-import { View, ViewStyle } from 'react-native';
+import { View } from 'react-native';
 import { PropsWithChildren } from 'react';
 import { StyleProps } from '../types/style';
-import { StyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 const useStyleProps = (styleProps: StyleProps) => {
   const {
