@@ -1,5 +1,6 @@
 import { StyleProps } from '../types/style';
 import { DimensionValue } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import { useMemo } from 'react';
 
 export const useStyleProps = (
   styleProps: StyleProps,

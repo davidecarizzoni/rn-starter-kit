@@ -1,6 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeNavigator } from './home/HomeNavigator';
 import { ProfileNavigator } from './profile/ProfileNavigator';
+import { Icon } from '../components';
+import { useTheme } from '../hooks/useTheme';
 
 const TabNavigator = createBottomTabNavigator<{
   HomeTab: undefined;
@@ -8,6 +10,10 @@ const TabNavigator = createBottomTabNavigator<{
 }>();
 
 export const RootNavigator = () => {
+  const { colors } = useTheme();
+  const tabBarActiveTintColor = colors.primary;
+  const tabBarInactiveTintColor = colors.gray['400'];
+
   return (
     <TabNavigator.Navigator
       backBehavior="history"
@@ -20,6 +26,11 @@ export const RootNavigator = () => {
         component={HomeNavigator}
         options={{
           tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <Icon icon={['fas', 'home']} color={color} />
+          ),
+          tabBarActiveTintColor,
+          tabBarInactiveTintColor,
         }}
       />
       <TabNavigator.Screen
@@ -27,6 +38,11 @@ export const RootNavigator = () => {
         component={ProfileNavigator}
         options={{
           tabBarLabel: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <Icon icon={['fas', 'user']} color={color} />
+          ),
+          tabBarActiveTintColor,
+          tabBarInactiveTintColor,
         }}
       />
     </TabNavigator.Navigator>

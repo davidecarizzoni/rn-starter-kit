@@ -1,4 +1,4 @@
-import {Palette, Theme} from '../types/theme';
+import { Palette, Theme } from '../types/theme';
 
 const gray: Palette = {
   50: '#F9FAFB',
@@ -79,6 +79,7 @@ export const lightTheme: Theme = {
   },
   colors: {
     primary: '#0070f3',
+    primaryLight: '#0096f3',
     secondary: '#ff0080',
     gray: gray,
     red: red,

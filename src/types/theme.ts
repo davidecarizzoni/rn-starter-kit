@@ -67,6 +67,7 @@ type Shapes = {
 
 type Colors = {
   primary: string;
+  primaryLight: string;
   secondary: string;
   gray: Palette;
   red: Palette;
