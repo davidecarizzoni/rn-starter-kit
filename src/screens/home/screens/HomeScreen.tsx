@@ -1,9 +1,12 @@
-import { ScreenContainer, Text } from '../../../components';
+import { Icon, Row, ScreenContainer, Text } from '../../../components';
 
 export const HomeScreen = () => {
   return (
     <ScreenContainer>
-      <Text>HomeScreen</Text>
+      <Row mt={10} ml={10}>
+        <Text>HomeScreen</Text>
+        <Icon icon={['fas', 'user']} />
+      </Row>
     </ScreenContainer>
   );
 };
