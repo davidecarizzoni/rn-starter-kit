@@ -1,5 +1,5 @@
-import { darkTheme, lightTheme } from '../constant/theme';
-import { Theme } from '../types/theme';
+import { darkTheme, lightTheme } from '@src/constant';
+import { Theme } from '@src/types';
 import { useColorScheme } from 'react-native';
 import { useMemo } from 'react';
 

@@ -1,4 +1,4 @@
-import { FlexProps } from '../types/style';
+import { FlexProps } from '@src/types';
 
 export const useFlexProps = (styleProps: FlexProps): FlexProps => {
   const {
