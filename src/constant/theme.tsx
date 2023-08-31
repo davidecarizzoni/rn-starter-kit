@@ -1,4 +1,4 @@
-import { Palette, Theme } from '@src/types';
+import { Palette, Theme } from '../types';
 
 const gray: Palette = {
   50: '#F9FAFB',

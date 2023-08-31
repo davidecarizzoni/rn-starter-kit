@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { Theme } from '@src/types';
 import { useTheme } from './useTheme';
+import { Theme } from '../types';
 
 export const useStylesheet = <T>(stylesheetCreator: (theme: Theme) => T) => {
   const theme = useTheme();

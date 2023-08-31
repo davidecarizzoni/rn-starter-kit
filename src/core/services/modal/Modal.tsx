@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Dimensions,
-  TouchableWithoutFeedback,
-  Pressable,
-} from 'react-native';
+import { StyleSheet, Dimensions, TouchableWithoutFeedback, Pressable } from 'react-native';
 import ModalManager, { ShowModalArguments } from './ModalManager';
 import Modal from 'react-native-modal';
 import { BlurView } from '@react-native-community/blur';
-import { HEIGHT_DEVICE, WIDTH_DEVICE } from '../../../constant/dimension';
+import { HEIGHT_DEVICE, WIDTH_DEVICE } from '../../../constant';
 import { Col, Row } from '../../../components';
 
 export function showModal({ ...args }: ShowModalArguments) {
@@ -37,10 +32,7 @@ interface CustomisableModalState {
   screenWidth: number;
 }
 
-export default class CustomisableModal extends Component<
-  CustomisableModalProps,
-  CustomisableModalState
-> {
+export default class CustomisableModal extends Component<CustomisableModalProps, CustomisableModalState> {
   private dimensionsSubscription: any;
   constructor(props: { modalProps?: any }) {
     super(props);
@@ -56,15 +48,12 @@ export default class CustomisableModal extends Component<
 
   componentDidMount() {
     ModalManager.register(this);
-    this.dimensionsSubscription = Dimensions.addEventListener(
-      'change',
-      ({ screen }) => {
-        this.setState({
-          screenHeight: screen.height,
-          screenWidth: screen.width,
-        });
-      },
-    );
+    this.dimensionsSubscription = Dimensions.addEventListener('change', ({ screen }) => {
+      this.setState({
+        screenHeight: screen.height,
+        screenWidth: screen.width,
+      });
+    });
   }
 
   componentWillUnmount() {
@@ -73,9 +62,7 @@ export default class CustomisableModal extends Component<
   }
 
   _showModal = ({ children, dismissable = true }: ShowModalArguments) => {
-    this.setState({ children, dismissable }, () =>
-      this.setState({ visible: true }),
-    );
+    this.setState({ children, dismissable }, () => this.setState({ visible: true }));
   };
 
   _closeModal = () => {
@@ -85,8 +72,7 @@ export default class CustomisableModal extends Component<
   render() {
     const { modalProps = {} } = this.props;
 
-    const { children, visible, screenHeight, screenWidth, dismissable } =
-      this.state;
+    const { children, visible, screenHeight, screenWidth, dismissable } = this.state;
 
     return (
       <Modal
@@ -99,13 +85,8 @@ export default class CustomisableModal extends Component<
         style={styles.modal}
         onBackdropPress={() => (dismissable ? this._closeModal() : {})}
         customBackdrop={
-          <TouchableWithoutFeedback
-            onPress={() => (dismissable ? this._closeModal() : {})}>
-            <BlurView
-              style={styles.blurView}
-              blurAmount={10}
-              reducedTransparencyFallbackColor={'white'}
-            />
+          <TouchableWithoutFeedback onPress={() => (dismissable ? this._closeModal() : {})}>
+            <BlurView style={styles.blurView} blurAmount={10} reducedTransparencyFallbackColor={'white'} />
           </TouchableWithoutFeedback>
         }>
         <Pressable onPress={() => (dismissable ? this._closeModal() : {})}>

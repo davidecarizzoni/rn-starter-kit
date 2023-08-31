@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, UserState } from '@src/types';
+import { RootState, UserState } from '../types';
 
 const initialState: UserState = {
   token: undefined,
@@ -29,5 +29,6 @@ export const { setUserToken, setUserRefreshToken, setUserDetail, clearUserState 
 export const selectUserToken = (state: RootState) => state.user.token;
 export const selectUserRefreshToken = (state: RootState) => state.user.refreshToken;
 export const selectUserDetail = (state: RootState) => state.user.detail;
+export const selectIsLogged = (state: RootState) => !!state.user.token;
 
 export const userReducers = userSlice.reducer;

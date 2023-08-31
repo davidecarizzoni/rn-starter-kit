@@ -1,22 +1,27 @@
-import { Text } from 'react-native';
-import { Row, ScreenContainer } from '../../../components';
-import { showAlertModal } from '../../../core/services/modal';
+import { Button, SafeAreaView } from 'react-native';
+import { useLogin } from '../../../api/auth';
+import { useState } from 'react';
+import { TextField } from '../../../components/ui/TextField';
+import { Col, Row } from '../../../components';
 
 export const LoginScreen = () => {
+  const [email, setEmail] = useState('admin@admin.com');
+  const [password, setPassword] = useState('adminadmin');
+  const { mutateAsync, isLoading } = useLogin();
+
+  const onPressLogin = async () => {
+    await mutateAsync({ email, password });
+  };
+
   return (
-    <ScreenContainer>
-      <Row mt={10} justifyContent={'center'}>
-        <Text
-          onPress={() => {
-            showAlertModal({
-              showBack: false,
-              text: 'ciao',
-              title: 'ciao',
-            });
-          }}>
-          LoginScreen
-        </Text>
+    <SafeAreaView>
+      <Col style={{ gap: 10 }} mh={10} mt={10}>
+        <TextField label={'email'} value={email} onChangeText={setEmail} />
+        <TextField label={'password'} value={password} onChangeText={setPassword} />
+      </Col>
+      <Row>
+        <Button title={'Login'} onPress={onPressLogin} />
       </Row>
-    </ScreenContainer>
+    </SafeAreaView>
   );
 };

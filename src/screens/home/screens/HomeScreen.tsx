@@ -1,4 +1,4 @@
-import { Icon, Row, ScreenContainer, Text } from 'src/components';
+import { Icon, Row, ScreenContainer, Text } from '../../../components';
 
 export const HomeScreen = () => {
   return (

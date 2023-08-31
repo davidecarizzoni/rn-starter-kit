@@ -1,5 +1,5 @@
-import { StyleProps } from '@src/types';
 import { DimensionValue } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import { StyleProps } from '../types';
 
 export const useStyleProps = (
   styleProps: StyleProps,
@@ -25,28 +25,7 @@ export const useStyleProps = (
   maxWidth?: DimensionValue;
   maxHeight?: DimensionValue;
 } => {
-  const {
-    m,
-    mt,
-    mb,
-    ml,
-    mr,
-    mv,
-    mh,
-    p,
-    pt,
-    pb,
-    pl,
-    pr,
-    ph,
-    pv,
-    w,
-    h,
-    minH,
-    minW,
-    maxW,
-    maxH,
-  } = styleProps;
+  const { m, mt, mb, ml, mr, mv, mh, p, pt, pb, pl, pr, ph, pv, w, h, minH, minW, maxW, maxH } = styleProps;
   return {
     marginTop: mt,
     marginBottom: mb,
