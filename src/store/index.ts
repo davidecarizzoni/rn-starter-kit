@@ -26,3 +26,18 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+function timeout(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+export const awaitRehydrate = async (): Promise<boolean> => {
+  const state = store.getState();
+  const rehydrated = state?._persist?.rehydrated;
+  console.debug('rehydrated', rehydrated);
+  if (rehydrated) {
+    return true;
+  } else {
+    await timeout(10);
+    return awaitRehydrate();
+  }
+};

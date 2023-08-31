@@ -26,9 +26,7 @@ export const RootNavigator = () => {
         component={HomeNavigator}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => (
-            <Icon icon={['fas', 'home']} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Icon icon={['fas', 'home']} color={color} />,
           tabBarActiveTintColor,
           tabBarInactiveTintColor,
         }}
@@ -38,9 +36,7 @@ export const RootNavigator = () => {
         component={ProfileNavigator}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <Icon icon={['fas', 'user']} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Icon icon={['fas', 'user']} color={color} />,
           tabBarActiveTintColor,
           tabBarInactiveTintColor,
         }}
