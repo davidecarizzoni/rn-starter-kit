@@ -1,9 +1,9 @@
 import { useMutation } from '@tanstack/react-query';
 import base64 from 'base-64';
 import { ssoAxios } from './config';
-import { User } from 'src/types';
 import { useDispatch } from 'react-redux';
 import { setUserDetail, setUserToken } from '../store/user';
+import { User } from '../types';
 
 type LoginParams = {
   email: string;
