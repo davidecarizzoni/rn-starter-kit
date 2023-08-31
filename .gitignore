@@ -48,6 +48,9 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Env
+*.env
+
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
