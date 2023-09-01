@@ -6,17 +6,20 @@ import { useFlexProps } from '../../hooks/useFlexProps';
 
 type Props = PropsWithChildren<StyleProps & FlexProps & { style?: StyleProp<ViewStyle> }>;
 
-export const Row = ({ children, ...rest }: Props) => {
+export const Row = ({ children, style, ...rest }: Props) => {
   const styleProps = useStyleProps(rest);
   const flexProps = useFlexProps(rest);
 
   return (
     <View
-      style={{
-        ...styleProps,
-        ...flexProps,
-        flexDirection: 'row',
-      }}>
+      style={[
+        {
+          ...styleProps,
+          ...flexProps,
+          flexDirection: 'row',
+        },
+        style,
+      ]}>
       {children}
     </View>
   );

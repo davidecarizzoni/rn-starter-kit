@@ -24,8 +24,9 @@ export const useStyleProps = (
   minWidth?: DimensionValue;
   maxWidth?: DimensionValue;
   maxHeight?: DimensionValue;
+  borderRadius?: number;
 } => {
-  const { m, mt, mb, ml, mr, mv, mh, p, pt, pb, pl, pr, ph, pv, w, h, minH, minW, maxW, maxH } = styleProps;
+  const { m, br, mt, mb, ml, mr, mv, mh, p, pt, pb, pl, pr, ph, pv, w, h, minH, minW, maxW, maxH } = styleProps;
   return {
     marginTop: mt,
     marginBottom: mb,
@@ -47,5 +48,6 @@ export const useStyleProps = (
     minWidth: minW,
     maxWidth: maxW,
     maxHeight: maxH,
+    borderRadius: br,
   };
 };

@@ -1,7 +1,4 @@
-import {
-  DimensionValue,
-  FlexStyle,
-} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import { DimensionValue, FlexStyle } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
 /**
  * Style props
@@ -28,6 +25,7 @@ export type StyleProps = {
   minH?: DimensionValue;
   maxW?: DimensionValue;
   maxH?: DimensionValue;
+  br?: number;
 };
 
 export type FlexProps = {
